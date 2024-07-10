@@ -1,41 +1,25 @@
-MyToken Solidity Smart Contract
-Overview
-The MyToken contract is a basic implementation of an ERC20-compatible token on the Ethereum blockchain. It allows for token creation (minting), transfer of tokens between addresses, and burning of tokens.
+# MyToken Smart Contract
 
-Features
-Token Metadata
+This repository contains the Solidity code for the `MyToken` smart contract. The contract implements a basic ERC-20 token with functionalities for minting, burning, and transferring tokens.
 
-Name: MyToken
-Symbol: MTK
-Decimals: 18
-Total Supply: Initialized upon contract deployment
-Owner Functions
+## Contract Overview
 
-mint: Allows the contract owner to create (mint) new tokens and assign them to a specified address.
-burn: Allows any token holder to destroy (burn) their own tokens.
-User Functions
+The `MyToken` contract includes the following functionalities:
 
-transfer: Enables any token holder to transfer tokens to another address.
-Usage
-Deployment
-The contract is deployed with an initial supply of tokens assigned to the deploying address (owner).
+1. **Token Metadata**:
+   - `name`: The name of the token (`MyToken`).
+   - `symbol`: The symbol of the token (`MTK`).
+   - `decimals`: The number of decimal places the token can be divided into (18 decimals by default).
+   - `totalSupply`: The total supply of tokens in circulation.
 
-Interacting with the Contract
-Minting Tokens
-Only the contract owner can mint new tokens using the mint function.
+2. **Owner Management**:
+   - `owner`: The address that deployed the contract and has special privileges (such as minting tokens).
 
-Burning Tokens
-Any token holder can burn their tokens using the burn function.
+3. **Balance Tracking**:
+   - `balances`: A mapping that tracks the token balances of Ethereum addresses.
 
-Transferring Tokens
-Token holders can transfer tokens to another address using the transfer function.
+4. **Events**:
+   - `Transfer`: Emitted when tokens are transferred from one address to another.
+   - `Mint`: Emitted when new tokens are minted and added to an address's balance.
+   - `Burn`: Emitted when tokens are burned (destroyed).
 
-Events
-The contract emits the following events:
-
-Transfer: Triggered when tokens are transferred between addresses.
-Mint: Triggered when new tokens are minted.
-Burn: Triggered when tokens are burned.
-Security Considerations
-Ownership: Ensure that the owner address is securely managed, as it has special privileges such as minting tokens.
-Transfer Function: The transfer function includes authorization checks to ensure only authorized parties can transfer tokens.
